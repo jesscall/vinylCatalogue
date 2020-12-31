@@ -7,7 +7,16 @@ function Home () {
     return (
         <>
             <HeroSection />
-            <Cards />
+            <Cards 
+                action="https://api.discogs.com/users/jesscall/collection/folders/0/releases"
+                label="Vinyl Collection"
+                index="releases"
+            />
+            <Cards 
+                action="https://api.discogs.com/users/jesscall/wants"
+                label="Wishlist"
+                index="wants"
+            />
         </>
     );
 }

@@ -1,26 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CardItem from './CardItem';
 import './Cards.css';
 
-function Cards() {
-    return (
-        <div className="cards">
-            <h1>Vinyl Collection!</h1>
+function Cards(props) {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        fetch(props.action, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization' : 'Discogs token=pcQFSpblZFQJCCrAfoykMDbfAXcqDqeUZMDOrgbb',
+                'Host': 'api.discogs.com'
+            }
+        })
+          .then(res => res.json())
+          .then(
+            (result) => {
+              setIsLoaded(true);
+              setItems(result[props.index]);
+              console.log(result);
+            },
+            (error) => {
+              setIsLoaded(false);
+              setError(error);
+            }
+          )
+      }, [])
+
+      if (error) {
+        return <div>Error: {error.message}</div>;
+      } else if (!isLoaded) {
+        return <div>Loading...</div>;
+      } else {
+        return (
+            <div className="cards">
+            <h1>{props.label}</h1>
             <div className="cards__container">
                 <div className="cards__wrapper">
                     <ul className="cards__items">
+                    {items.map(item => (
                         <CardItem 
-                        src="images/albertking.jpeg"
-                        text="Born Under A Bad Sign by Albert King"
-                        label="Blues"
+                        id={item.id}
+                        src={item.basic_information.thumb}
+                        text={item.basic_information.title}
+                        label={item.basic_information.styles[0]}
                         path="/"
                         />
-
+                    ))}
                     </ul>
                 </div>
             </div>
         </div>
     );
+    }
 }
 
 export default Cards
