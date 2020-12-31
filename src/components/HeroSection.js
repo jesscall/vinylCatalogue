@@ -7,13 +7,14 @@ import './HeroSection.css';
 function HeroSection() {
     return (
         <div className="hero-container">
-            <img src="videos/vinyl_gif.gif" />
+            <img src="images/vinyl_gif.gif" />
             <h1>JESSICA'S RECORD COLLECTION</h1>
             <div className='hero-btns'>
                 <Button
                 className='btns'
                 buttonStyle='btn--outline'
                 buttonSize='btn--large'
+                path='/collection'
                 >
                 VIEW COLLECTION
                 </Button>
@@ -21,6 +22,7 @@ function HeroSection() {
                 className='btns'
                 buttonStyle='btn--outline'
                 buttonSize='btn--large'
+                path='/wishlist'
                 >
                 VIEW WISHLIST
                 </Button>

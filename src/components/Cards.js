@@ -33,8 +33,8 @@ function Cards(props) {
 
       if (error) {
         return <div>Error: {error.message}</div>;
-      } else if (!isLoaded) {
-        return <div>Loading...</div>;
+      } else  if (!isLoaded) {
+        return <img className='loading' src="images/loading.gif" alt="loading"/>;
       } else {
         return (
             <div className="cards">
@@ -45,7 +45,7 @@ function Cards(props) {
                     {items.map(item => (
                         <CardItem 
                         id={item.id}
-                        src={item.basic_information.thumb}
+                        src={item.basic_information.cover_image}
                         text={item.basic_information.title}
                         label={item.basic_information.styles[0]}
                         path="/"
