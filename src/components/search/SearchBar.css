@@ -1,0 +1,16 @@
+.searchParams {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+input {
+    margin: 10px;
+    padding: 10px;
+    width: 15%;
+}
+
+.btn {
+    margin: 10px;
+}

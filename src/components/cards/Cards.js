@@ -48,7 +48,7 @@ function Cards(props) {
                         src={item.basic_information.cover_image}
                         text={item.basic_information.title}
                         label={item.basic_information.styles[0]}
-                        path="/"
+                        path={`/discography/${item.id}`}
                         />
                     ))}
                     </ul>

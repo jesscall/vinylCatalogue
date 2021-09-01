@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import HeroSection from '../LandingSection';
-import Cards from '../Cards';
+import Cards from '../cards/Cards';
 
 function Home () {
     return (

@@ -1,0 +1,12 @@
+.result {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    width: 50%;
+}
+
+img {
+    width: 70%;
+}

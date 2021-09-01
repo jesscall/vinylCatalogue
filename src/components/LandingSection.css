@@ -6,7 +6,7 @@ video {
     z-index: -1;
   }
 
-img {
+.landing-gif {
     width: 100%;
     height: 100%;
 }
