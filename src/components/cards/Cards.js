@@ -34,14 +34,14 @@ function Cards(props) {
       if (error) {
         return <div>Error: {error.message}</div>;
       } else  if (!isLoaded) {
-        return <img className='loading' src="images/loading.gif" alt="loading"/>;
+        return <img className='loading' src='images/loading.gif' alt='loading'/>;
       } else {
         return (
-            <div className="cards">
+            <div className='cards'>
             <h1>{props.label}</h1>
-            <div className="cards__container">
-                <div className="cards__wrapper">
-                    <ul className="cards__items">
+            <div className='cards__container'>
+                <div className='cards__wrapper'>
+                    <ul className='cards__items'>
                     {items.map(item => (
                         <CardItem 
                         id={item.id}

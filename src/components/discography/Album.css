@@ -1,0 +1,30 @@
+.album {
+    display: flex;
+    justify-content: center;
+    height: 700px;
+    width: 1000px;
+}
+
+.album-cover {
+    height: 80%;
+    padding: 2rem;
+    border-radius: 50px;
+}
+
+.album-cover:hover {
+    transform: scale(1.1);
+}
+
+.album-details {
+    width: 45%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.album-year {
+    color: grey;
+}
+

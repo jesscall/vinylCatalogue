@@ -4,9 +4,9 @@ function Track (props) {
 
     return (
         <>
-            <h1>
+            <p>
                 {props.track.position} - {props.track.title}
-            </h1>
+            </p>
             
         </>
     );

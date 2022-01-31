@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TrackList from './TrackList';
+import './Album.css';
 
 function Album (props) {
     const [title, setTitle] = useState();
@@ -32,13 +33,25 @@ function Album (props) {
     }, []);
 
     return (
-        <>
-            <h1>{title}</h1>
-            <h1>{artists}</h1>
-            <h1>{year}</h1>
-            <TrackList tracks={tracks} />
-            <img src={artwork} />
-        </>
+        <div 
+            className='album'
+        >
+            <div>
+                <img 
+                    src={artwork}
+                    className='album-cover'
+                />
+            </div>
+            <div className='album-details'>
+                <h1 className='album-title'>{title}</h1>
+                <h1 className='album-artist'>{artists}</h1>
+                <h3 className='album-year'>{year}</h3>
+                <br />
+                <TrackList 
+                    tracks={tracks}
+                />
+            </div>
+        </div>
     );
 }
 
