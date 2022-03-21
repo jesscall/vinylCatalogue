@@ -6,7 +6,7 @@
 }
 
 .album-cover {
-    height: 80%;
+    height: 75%;
     padding: 2rem;
     border-radius: 50px;
 }
@@ -17,6 +17,7 @@
 
 .album-details {
     width: 45%;
+    height: 75%;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -28,3 +29,9 @@
     color: grey;
 }
 
+.btn--container {
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+    margin-top: -0.5rem;
+}

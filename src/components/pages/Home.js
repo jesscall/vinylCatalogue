@@ -2,20 +2,24 @@ import React from 'react';
 import '../../App.css';
 import HeroSection from '../LandingSection';
 import Cards from '../cards/Cards';
+import { useSelector } from 'react-redux';
+import { selectCollection } from '../../features/collection/collectionSlice';
+import { selectWishlist } from '../../features/wishlist/wishlistSlice';
 
 function Home () {
+    const collection = useSelector(selectCollection);
+    const wishlist = useSelector(selectWishlist);
+
     return (
         <>
             <HeroSection />
             <Cards 
-                action="https://api.discogs.com/users/jesscall/collection/folders/0/releases"
+                items={collection}
                 label="Vinyl Collection"
-                index="releases"
             />
             <Cards 
-                action="https://api.discogs.com/users/jesscall/wants"
+                items={wishlist}
                 label="Wishlist"
-                index="wants"
             />
         </>
     );

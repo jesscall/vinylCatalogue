@@ -2,9 +2,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/pages/Home';
-import Collection from './components/pages/Collection';
-import Wishlist from './components/pages/Wishlist';
-import SearchPage from './components/pages/SearchPage';
+import Collection from './features/collection/Collection';
+import Wishlist from './features/wishlist/Wishlist';
+import SearchPage from './features/search/SearchPage';
 import Discography from './components/discography/Discography';
 
 function App() {
