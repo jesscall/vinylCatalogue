@@ -33,7 +33,7 @@ function Album (props) {
                 setArtwork(jsonResponse.images[0].resource_url);
             });
         }
-    }, []);
+    }, [props.id]);
 
     useEffect(() => {
         setResultIsInCollection(collectionItem !== undefined ? true : false);

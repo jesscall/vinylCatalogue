@@ -48,6 +48,6 @@ export const wishlistSlice = createSlice({
 
 export const selectWishlist = (state) => state.wishlist.wishlist;
 export const selectStatus = (state) => state.wishlist.status;
-export const selectWishlistItemFromID = (state, id) => state.wishlist.wishlist.find(item => item.id == id);
+export const selectWishlistItemFromID = (state, id) => state.wishlist.wishlist.find(item => item.id === parseInt(id));
 
 export default wishlistSlice.reducer;
