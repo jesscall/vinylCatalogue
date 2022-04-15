@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
-import { Button } from '../../components/Button';
+import { Button } from '../Button';
 import './SearchResult.css';
 import swal from 'sweetalert2';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCollection, deleteFromCollection, selectCollectionItemFromID } from '../collection/collectionSlice';
-import { addToWishlist, deleteFromWishlist, selectWishlistItemFromID } from '../wishlist/wishlistSlice';
+import { addToCollection, deleteFromCollection, selectCollectionItemFromID } from '../../features/collection/collectionSlice';
+import { addToWishlist, deleteFromWishlist, selectWishlistItemFromID } from '../../features/wishlist/wishlistSlice';
 
 function SearchResult(props) {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function SearchResult(props) {
     const wishlistItem = useSelector((state) => selectWishlistItemFromID(state, props.id));
     const [resultIsInWishlist, setResultIsInWishlist] = useState(wishlistItem !== undefined ? true : false);
 
-    const handleClick = (e) => {
+    const toggleCatalogue = (e) => {
         const type = e.target.id;
         if (type === 'collection') {
             // toggle 
@@ -28,7 +28,7 @@ function SearchResult(props) {
             setResultIsInCollection(!resultIsInCollection);
         } else if (type === 'wishlist') {
             // toggle 
-            if (!resultIsInCollection) {
+            if (!resultIsInWishlist) {
                 dispatch(addToWishlist(props.id))
                 .then(new swal('Added to Wishlist!', '', 'success'));
             } else {
@@ -56,18 +56,18 @@ function SearchResult(props) {
                                 className='btns'
                                 buttonStyle='btn--secondary'
                                 buttonSize='btn--medium'
-                                onClick={handleClick}
+                                onClick={toggleCatalogue}
                             >
-                                {resultIsInCollection ? '- Collection' : '+ Collection'}
+                                {resultIsInCollection ? 'Remove from Collection' : 'Add to Collection'}
                             </Button>
                             <Button 
                                 id='wishlist'
                                 className='btns'
                                 buttonStyle='btn--secondary'
                                 buttonSize='btn--medium'
-                                onClick={handleClick}
+                                onClick={toggleCatalogue}
                             >
-                                {resultIsInWishlist ? '- Wishlist' : '+ Wishlist'}
+                                {resultIsInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
                             </Button>
                         </div>
                     </div>

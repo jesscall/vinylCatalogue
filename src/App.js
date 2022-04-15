@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/pages/Home';
 import Collection from './features/collection/Collection';
 import Wishlist from './features/wishlist/Wishlist';
-import SearchPage from './features/search/SearchPage';
+import SearchPage from './components/search/SearchPage';
 import Discography from './components/discography/Discography';
 
 function App() {

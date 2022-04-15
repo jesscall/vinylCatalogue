@@ -41,13 +41,13 @@ export const wishlistSlice = createSlice({
                 state.wishlist.push(action.payload);
             })
             .addCase(deleteFromWishlist.fulfilled, (state, action) => {
-                state.wishlist.splice(state.indexOf(action.payload), 1);
+                state.wishlist.splice(state.wishlist.indexOf(action.payload), 1);
             })
     }
 });
 
 export const selectWishlist = (state) => state.wishlist.wishlist;
 export const selectStatus = (state) => state.wishlist.status;
-export const selectWishlistItemFromID = (state, id) => state.wishlist.wishlist.find(item => item.id === id);
+export const selectWishlistItemFromID = (state, id) => state.wishlist.wishlist.find(item => item.id == id);
 
 export default wishlistSlice.reducer;

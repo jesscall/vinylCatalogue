@@ -48,6 +48,6 @@ export const collectionSlice = createSlice({
 
 export const selectCollection = (state) => state.collection.collection;
 export const selectStatus = (state) => state.collection.status;
-export const selectCollectionItemFromID = (state, id) => state.collection.collection.find(item => item.id === id);
+export const selectCollectionItemFromID = (state, id) => state.collection.collection.find(item => item.id == id);
 
 export default collectionSlice.reducer;

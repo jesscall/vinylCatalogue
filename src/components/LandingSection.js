@@ -7,7 +7,7 @@ import './LandingSection.css';
 function HeroSection() {
     return (
         <div className="hero-container">
-            <img className="landing-gif" src="images/vinyl_gif.gif" />
+            <img className="landing-gif" src="images/vinyl_gif.gif" alt="vinyl" />
             <h1>JESSICA'S RECORD COLLECTION</h1>
             <div className='hero-btns'>
                 <Button
